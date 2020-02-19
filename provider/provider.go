@@ -4,6 +4,7 @@ import (
 	"github.com/hashicorp/terraform/helper/schema"
 	"github.com/hashicorp/terraform/terraform"
 	"github.com/kyma-incubator/terraform-provider-gardener/client"
+	"github.com/kyma-incubator/terraform-provider-gardener/seed"
 	"github.com/kyma-incubator/terraform-provider-gardener/shoot"
 )
 
@@ -17,6 +18,7 @@ func Provider() terraform.ResourceProvider {
 		},
 		ResourcesMap: map[string]*schema.Resource{
 			"gardener_shoot": shoot.ResourceShoot(),
+			"gardener_seed":  seed.ResourceSeed(),
 		},
 		ConfigureFunc: providerConfigure,
 	}
